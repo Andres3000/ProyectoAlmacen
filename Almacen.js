@@ -6,14 +6,28 @@
  * @version 1.0.0
  */
 
+ /**
+  * Class Almacen descrito en "file"
+  */
+
  class Almacen {
     //Constructor de la clase almacén, recibe la cantidad de elementos (cds o dvds) que puede haber. 
+    /**
+     * Descripción ya realizada. (en file)
+     * @param {number} capacidad 
+     */
     constructor(capacidad) {
         this.capacidad = capacidad;
         this.cds = [];
         this.dvds = [];
     }
     //El método introducir recibe un objeto y si hay sitio, tras comprobar si es de tipo cd o dvd lo mete dentro de la colección (Array) correspondiente. Devuelve 0 si no puede meterlo o en caso contrario el número de unidades introducidas.
+    /**
+     * 
+     * @param {string} objeto lo que recibe
+     * @return {number} númeor de unidades introducidas
+     */
+
     introducir(objeto) {
         if (this.capacidad == 0) {
             console.log("almacen lleno")
@@ -45,6 +59,13 @@
         }
     }
     //Este método recibe una cadena de texto y busca dentro del almacén si existe un cd o dvd con ese título o ese autor, si lo encuentra devulve un objeto con el título, autor, unidades y precio. Si no lo encuentra devuelve null
+    /**
+     * 
+     * @param {string} tituloautor lo que recibe
+     * @return {string} el objeto devuelto
+     * @return {} null
+     */
+
     buscar(tituloautor) {
         for (let obj of this.cds) {
             if ((tituloautor == obj.titulo) || (tituloautor == obj.autor)) {
@@ -71,6 +92,12 @@
         return null;
     }
     //El método comprar, recibe una cadena de texto con un título y la cantidad de dinero. Devuelve -1 si no puede comprarlo y la cantidad de dinero que le sobra si lo puede comprar.
+    /**
+     * 
+     * @param {string} titulo título de nuestro disco
+     * @param {number} dinero cantidad de dinero
+     * @return -1
+     */
     
     comprar(titulo, dinero) {
         for (let obj of this.cds) {
